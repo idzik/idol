@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	default-init-method="turnOnLight" default-destroy-method="turnOffLoght"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<bean id="auditorium" class="pl.idol.audience.Auditorium"></bean>
+
+	<context:component-scan base-package="pl.idol">
+	<context:include-filter type="assignable" expression="pl.idol.spall.Spall"/>
+	</context:component-scan>
+
+	<bean id="poetic" class="pl.idol.performers.PoeticJugglar"></bean>
+
+	<bean id="poemat" class="pl.idol.poemat.Sonet29"></bean>
+
+	<bean id="sax" class="pl.idol.performers.Saxofon"></bean>
+
+	<bean id="gitar" class="pl.idol.performers.Guitar"></bean>
+	
+	<bean id="piano" class="pl.idol.performers.Piano"></bean>
+
+	<bean id="grajek" class="pl.idol.performers.Instrumentalist">
+		<property name="song">
+			<set>
+				<value>Siadła pszczółka na jabłoni</value>
+				<value>Kolorowych jarmarków</value>
+			</set>
+		</property>
+	</bean>
+
+	<bean id="dancer" class="pl.idol.performers.Tancerz"></bean>
+	
+	<bean id="rap" class="pl.idol.dance.Rap"></bean>
+	<bean id="tango" class="pl.idol.dance.Tango"></bean>
+	
+	<bean id="noz" class="pl.idol.performers.KnifJuglar"></bean>
+	<bean id="scizors" class="pl.idol.knif.Scizors" scope="prototype"></bean>
+	
+<!-- 	<bean id="magik" class="pl.idol.performers.Magic"></bean> -->
+	
+	<!-- <bean id="du" class="pl.idol.performers.Juggler"> <constructor-arg 
+		name="quantityBags" value="99"></constructor-arg> <constructor-arg name="instrument"> 
+		<list> <ref bean="piano" /> <ref bean="harmonica" /> <ref bean="piano" /> 
+		</list> </constructor-arg> <constructor-arg name="map"> <map> <entry key="Gitara" 
+		value-ref="guitar"></entry> <entry key="Piano" value-ref="piano"></entry> 
+		</map> </constructor-arg> </bean> <bean id="duke" class="pl.idol.performers.PoeticJugglar" 
+		init-method="turnOnLight" c:poem-ref="sonet29" c:quantitiBags="1223"> <constructor-arg 
+		name="poem" ref="sonet29"></constructor-arg> <constructor-arg name="quantitiBags" 
+		value="15"></constructor-arg> </bean> <bean id="keny" class="pl.idol.performers.Instrumentalist"></bean> 
+		<bean id="sonet29" class="pl.idol.poemat.Sonet29"></bean> <bean id="stage" 
+		class="pl.idol.audience.Stage" factory-method="getInstance"></bean> <bean 
+		id="auditorium" class="pl.idol.audience.Auditorium" init-method="turnOnLight" 
+		destroy-method="turnOffLoght"></bean> <bean id="saxofonist" class="pl.idol.performers.Instrumentalist" 
+		p:age="123" p:instrument-ref="guitar"> <property name="song"> <array> <value>Moja 
+		wolność</value> <value>Gdzie sie podziały</value> <value>W zielonym gaju</value> 
+		</array> </property> <property name="song" value="Maja maja"></property> 
+		<property name="age" value="22"></property> <property name="song" value="Maja 
+		pszczółka"></property> <property name="age" value="33"></property> <property 
+		name="instrument"> <bean class="com.spring.idol.Saxofon"></bean> </property> 
+		</bean> <bean id="saxofon" class="pl.idol.performers.Saxofon"></bean> <bean 
+		id="piano" class="pl.idol.performers.Piano"></bean> <bean id="guitar" class="pl.idol.performers.Guitar"></bean> 
+		<bean id="harmonica" class="pl.idol.performers.Harmonica"></bean> <bean id="bumbum" 
+		class="Instruments.Beben"></bean> <bean id="bumbum" class="Instruments.Beben"></bean> 
+		<bean id="hunk" class="pl.idol.performers.OnManBand"> <property name="instrument"> 
+		<set> <ref bean="piano" /> <ref bean="saxofon" /> <ref bean="guitar" /> <ref 
+		bean="harmonica" /> <ref bean="piano" /> </set> </property> <property name="mapInstrument"> 
+		<map> <entry key="Gitara gra" value-ref="guitar"></entry> <entry key="Pianino 
+		gra" value-ref="piano"></entry> <entry key="Harmonia gra" value-ref="harmonica"></entry> 
+		</map> </property> </bean> <bean id="soccerBall" class="pl.idol.typeBall.SoccerBall" 
+		primary="true"> <constructor-arg value="5"></constructor-arg> <constructor-arg 
+		value="oval"></constructor-arg> </bean> <bean id="tenisBall" class="pl.idol.typeBall.TenisBall"> 
+		<constructor-arg name="sizeBall" value="1"></constructor-arg> <constructor-arg 
+		name="shape" value="oval"></constructor-arg> <constructor-arg name="color" 
+		value="yellow"></constructor-arg> </bean> <bean id="citko" class="pl.idol.performers.SoccerMan" 
+		autowire="byType"> <property name="bounceBall" value="99"></property> </bean> -->
+
+</beans>
+
+
+
+
+
+
+
+
+
+
