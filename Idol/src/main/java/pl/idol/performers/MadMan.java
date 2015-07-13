@@ -28,6 +28,9 @@ public class MadMan implements Performer {
 	
 	public void perform() {
 		System.out.println("Jestem zajebisty i mam na imie " + name + " a teraz : ");
+		for(int i = 0 ; i<100000 ; i++){
+			Math.pow(2, 1234);
+		}
 		madness.showMAdnes();
 
 	}

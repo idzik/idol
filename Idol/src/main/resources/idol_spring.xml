@@ -46,11 +46,18 @@
 
 	<aop:config>
 		<aop:aspect ref="audience">
-			<aop:before method="teakeSeats" pointcut="execution(* pl.idol.performers.Performer.perform(..))"/>
-			<aop:before method="turnOffTelephone" pointcut="execution(* pl.idol.performers.Performer.perform(..))"/>
-			<aop:after-returning method="applause" pointcut="execution(* pl.idol.performers.Performer.perform(..))"/>
+			<aop:pointcut expression="execution(* pl.idol.performers.Performer.perform(..))"
+				id="per" />
+			<aop:around method="watchPerformers" pointcut-ref="per" />
 		</aop:aspect>
 	</aop:config>
+
+	<!-- deklaracja aspektu before i after -->
+	<!-- <aop:config> <aop:aspect ref="audience"> <aop:pointcut expression="execution(* 
+		pl.idol.performers.Performer.perform(..))" id="performer"/> <aop:before method="teakeSeats" 
+		pointcut-ref="performer" /> <aop:before method="turnOffTelephone" pointcut-ref="performer"/> 
+		<aop:after-returning method="applause" pointcut-ref="performer"/> </aop:aspect> 
+		</aop:config> -->
 
 	<!-- <bean id="magik" class="pl.idol.performers.Magic"></bean> -->
 
