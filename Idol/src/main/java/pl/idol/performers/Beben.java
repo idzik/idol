@@ -2,6 +2,7 @@ package pl.idol.performers;
 
 import org.springframework.stereotype.Component;
 
+
 @Component
 public class Beben implements Instrument {
 
